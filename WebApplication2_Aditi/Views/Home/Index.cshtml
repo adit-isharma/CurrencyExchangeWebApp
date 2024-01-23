@@ -1,0 +1,234 @@
+﻿<form id="CurrencyExchangeForm" method="post" style="background-color:#E6E6FA">
+    <table width="350px" border="1px">
+        <tr>
+            <th colspan="2">Currency Exchange</th>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="text" id="Product1" placeholder="Product1">
+            </td>
+            <td>
+                <input type="text" id="Product1desc" placeholder="Product1desc">
+            </td>
+            <td>
+                <input type="number" id="tshirtPrice" placeholder="INR" onkeypress="return KeyTee()">
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="Product2" placeholder="Product2">
+            </td>
+            <td>
+                <input type="text" id="Product2desc" placeholder="Product2desc">
+            </td>
+            <td>
+                <input type="number" id="jeansPrice" placeholder="INR" onkeypress="return KeyJeans()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="Product3" placeholder="Product3">
+            </td>
+            <td>
+                <input type="text" id="Product3desc" placeholder="Product3desc">
+            </td>
+            <td>
+                <input type="number" id="hatPrice" placeholder="INR" onkeypress="return KeyHat()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="Product4" placeholder="Product4">
+            </td>
+            <td>
+                <input type="text" id="Product4desc" placeholder="Product4desc">
+            </td>
+            <td>
+                <input type="number" id="coatPrice" placeholder="INR" onkeypress="return KeyCoat()">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="Product5" placeholder="Product5">
+            </td>
+            <td>
+                <input type="text" id="Product5desc" placeholder="Product5desc">
+            </td>
+            <td>
+                <input type="number" id="trainersPrice" placeholder="INR" onkeypress="return KeyTrainer()">
+            </td>
+        </tr>
+
+        <td>Exchange price:</td>
+        <td>
+            <p id="test"></p>
+        </td>
+    </table>
+
+    <table width="200px" border="1px">
+        <tr>
+            <td><input type="button" onclick="CalculateDollar()" value="USD"></td>
+            <td><input type="button" onclick="CalculateEuro()" value="EURO"></td>
+            <td><input type="button" onclick="CalculateAus()" value="AUS"></td>
+            <td><input type="button" onclick="GetProducts()" value="Products"></td>
+
+        </tr>
+    </table>
+    <td>
+        Click on Products button to get the products from the api.
+        We can manually edit and change product's name, description and add the prices.
+        Use Currency buttons to exchange price from INR.
+    </td>
+</form>
+
+<script>
+
+    function KeyTee() {
+        document.getElementById("jeansPrice").value = "";
+        document.getElementById("hatPrice").value = "";
+        document.getElementById("coatPrice").value = "";
+        document.getElementById("trainersPrice").value = "";
+        document.getElementById("test").innerHTML = "";
+    }
+
+    function KeyJeans() {
+        document.getElementById("tshirtPrice").value = "";
+        document.getElementById("hatPrice").value = "";
+        document.getElementById("coatPrice").value = "";
+        document.getElementById("trainersPrice").value = "";
+        document.getElementById("test").innerHTML = "";
+    }
+
+    function KeyHat() {
+        document.getElementById("tshirtPrice").value = "";
+        document.getElementById("jeansPrice").value = "";
+        document.getElementById("coatPrice").value = "";
+        document.getElementById("trainersPrice").value = "";
+        document.getElementById("test").innerHTML = "";
+    }
+    function KeyCoat() {
+        document.getElementById("tshirtPrice").value = "";
+        document.getElementById("jeansPrice").value = "";
+        document.getElementById("hatPrice").value = "";
+        document.getElementById("trainersPrice").value = "";
+        document.getElementById("test").innerHTML = "";
+    }
+    function KeyTrainer() {
+        document.getElementById("tshirtPrice").value = "";
+        document.getElementById("jeansPrice").value = "";
+        document.getElementById("hatPrice").value = "";
+        document.getElementById("coatPrice").value = "";
+        document.getElementById("test").innerHTML = "";
+    }
+
+    function CalculateDollar() {
+        var pricetee = document.getElementById("tshirtPrice").value;
+        var pricejeans = document.getElementById("jeansPrice").value;
+        var priceHat = document.getElementById("hatPrice").value;
+        var priceCoat = document.getElementById("coatPrice").value;
+        var priceTrainers = document.getElementById("trainersPrice").value;
+        var finalPrice = 0;
+        if (pricetee != "") {
+            finalPrice = pricetee / 83.09;
+        }
+        if (pricejeans != "") {
+            finalPrice = pricejeans / 83.09;
+        }
+        if (priceHat != "") {
+            finalPrice = priceHat / 83.09;
+        }
+        if (priceCoat != "") {
+            finalPrice = priceCoat / 83.09;
+        }
+        if (priceTrainers != "") {
+            finalPrice = priceTrainers / 83.09;
+        }
+
+        document.getElementById("test").innerHTML = finalPrice;
+    }
+
+    function CalculateEuro() {
+        var pricetee = document.getElementById("tshirtPrice").value;
+        var pricejeans = document.getElementById("jeansPrice").value;
+        var priceHat = document.getElementById("hatPrice").value;
+        var priceCoat = document.getElementById("coatPrice").value;
+        var priceTrainers = document.getElementById("trainersPrice").value;
+        var finalPrice = 0;
+        if (pricetee != "") {
+            finalPrice = pricetee / 90.50;
+        }
+        if (pricejeans != "") {
+            finalPrice = pricejeans / 90.50;
+        }
+        if (priceHat != "") {
+            finalPrice = priceHat / 90.50;
+        }
+        if (priceCoat != "") {
+            finalPrice = priceCoat / 90.50;
+        }
+        if (priceTrainers != "") {
+            finalPrice = priceTrainers / 90.50;
+        }
+
+        document.getElementById("test").innerHTML = finalPrice;
+    }
+
+    function CalculateAus() {
+        var pricetee = document.getElementById("tshirtPrice").value;
+        var pricejeans = document.getElementById("jeansPrice").value;
+        var priceHat = document.getElementById("hatPrice").value;
+        var priceCoat = document.getElementById("coatPrice").value;
+        var priceTrainers = document.getElementById("trainersPrice").value;
+        var finalPrice = 0;
+        if (pricetee != "") {
+            finalPrice = pricetee / 54.78;
+        }
+        if (pricejeans != "") {
+            finalPrice = pricejeans / 54.78;
+        }
+        if (priceHat != "") {
+            finalPrice = priceHat / 54.78;
+        }
+        if (priceCoat != "") {
+            finalPrice = priceCoat / 54.78;
+        }
+        if (priceTrainers != "") {
+            finalPrice = priceTrainers / 54.78;
+        }
+
+        document.getElementById("test").innerHTML = finalPrice;
+    }
+
+    function GetProducts() {
+        var xhttp = new XMLHttpRequest();
+
+        xhttp.open('Get', 'http://localhost:44387/api/product', false);
+        var result = xhttp.send();
+        var a = JSON.parse(xhttp.responseText);
+        var a = JSON.parse(a);
+        myObj = "";
+
+        myObj = Object.values(a[0]);
+        document.getElementById("Product1").value = myObj[0];
+        document.getElementById("Product1desc").value = myObj[1];
+        myObj = Object.values(a[1]);
+        document.getElementById("Product2").value = myObj[0];
+        document.getElementById("Product2desc").value = myObj[1];
+        myObj = Object.values(a[2]);
+        document.getElementById("Product3").value = myObj[0];
+        document.getElementById("Product3desc").value = myObj[1];
+        myObj = Object.values(a[3]);
+        document.getElementById("Product4").value = myObj[0];
+        document.getElementById("Product4desc").value = myObj[1];
+        myObj = Object.values(a[4]);
+        document.getElementById("Product5").value = myObj[0];
+        document.getElementById("Product5desc").value = myObj[1];
+
+        //document.getElementById("Product3").value = myObj[2];
+        //document.getElementById("Product4").value = myObj[2];
+        //document.getElementById("Product5").value = myObj[2];
+        console.log(a);
+    }
+</script>  
